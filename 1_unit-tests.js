@@ -11,7 +11,7 @@ suite('Unit Tests', function () {
     // #2
     test('#isDefined, #isUndefined', function () {
       assert.isDefined(null, 'null is not undefined');
-      assert.isUndifined(undefined, 'undefined IS undefined');
+      assert.isUndefined(undefined, 'undefined IS undefined');
       assert.isDefined('hello', 'A string is not undefined');
     });
     // #3
@@ -24,7 +24,7 @@ suite('Unit Tests', function () {
     test('#isTrue, #isNotTrue', function () {
       assert.isTrue(true, 'true is true');
       assert.isTrue(!!'double negation', 'Double negation of a truthy value is true');
-      assert.isNotTrue{ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
+     assert.isNotTrue({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
     });
   });
 
@@ -42,8 +42,8 @@ suite('Unit Tests', function () {
     test('#strictEqual, #notStrictEqual', function () {
       assert.notStrictEqual(6, '6');
       assert.strictEqual(6, 3 * 2);
-      assert.notStrictEqual(6 * '2', 12);
-      assert.strictEqual([1, 'a', {}], [1, 'a', {}]);
+      assert.strictEqual(6 * '2', 12);
+      assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
     });
     // #7
     test('#deepEqual, #notDeepEqual', function () {
@@ -75,8 +75,8 @@ suite('Unit Tests', function () {
     });
     // #10
     test('#approximately', function () {
-      assert.aprroximately(weirdNumbers(0.5), 1, 0);
-      assert.aproximately(weirdNumbers(0.2), 1, 0);
+      assert.approximately(weirdNumbers(0.5), 1, 0.5, 0);
+      assert.approximately(weirdNumbers(0.2), 1, 0.8, 0);
     });
   });
 
